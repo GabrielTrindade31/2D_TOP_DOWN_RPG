@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6864d4ceb91dde742bdd57f3a5bd28f6, type: 3}
+  m_Name: NPC_GABELE
+  m_EditorClassIdentifier: 
+  actor: {fileID: 8007718884643642009, guid: 4a36a1981758d1f44a9292e369123abe, type: 3}
+  speakerSprite: {fileID: 0}
+  sentence: 
+  dialogues:
+  - actorName: Gabele
+    profile: {fileID: 21300000, guid: 2173a1546ed7bb34ebc778745d6e6fce, type: 3}
+    sentence:
+      english: Hi Gabiel
+      portuguese: Ola Gabiel
+      spanish: q
+  - actorName: Gabele
+    profile: {fileID: 21300000, guid: 2173a1546ed7bb34ebc778745d6e6fce, type: 3}
+    sentence:
+      english: I have a mission for you!!
+      portuguese: "Tenho uma miss\xE3o para voce!!"
+      spanish: manito
