@@ -95,6 +95,8 @@ MonoBehaviour:
   hole: {fileID: -373817857, guid: 123b1266515f5af48bfba124661ebec7, type: 3}
   carrot: {fileID: -2011542116, guid: 123b1266515f5af48bfba124661ebec7, type: 3}
   digAmount: 4
+  waterAmount: 25
+  detecting: 0
 --- !u!1 &4605003393253568339
 GameObject:
   m_ObjectHideFlags: 0
