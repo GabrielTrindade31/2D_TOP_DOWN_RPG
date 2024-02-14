@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
 
     public int health;
+    private PlayerItens playerItens;
     [SerializeField] private float speed;
     [SerializeField] private float runspeed;
     private float initialSpeed;
@@ -13,14 +14,21 @@ public class Player : MonoBehaviour
     private bool isrolling;
     private bool iscutting;
     private bool isdigging;
+    private bool iswatering;
     private int handlingObj;
     private Rigidbody2D rig;
     private Vector2 direction;
     // Start is called before the first frame update
 
-    public bool _isrolling{
+    public bool _isrolling
+    {
         get { return isrolling; }
         set { isrolling = value; }
+    }
+    public bool _iswatering
+    {
+        get { return iswatering; }
+        set { iswatering = value; }
     }
     public bool _isrunning
     {
@@ -46,16 +54,20 @@ public class Player : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         initialSpeed = speed;
+        playerItens = GetComponent<PlayerItens>();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)){
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
             handlingObj = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2)){
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
             handlingObj = 2;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3)){
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
             handlingObj = 3;
         }
         //Control the direction in every frame of the player
@@ -64,6 +76,7 @@ public class Player : MonoBehaviour
         Onrolling();
         Oncutting();
         OnDigging();
+        OnWantering();
 
     }
     private void FixedUpdate()
@@ -76,9 +89,12 @@ public class Player : MonoBehaviour
         //code to atack
     }
     #region Movement
-    void Oncutting(){
-        if(handlingObj == 1){
-            if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift)){
+    void Oncutting()
+    {
+        if (handlingObj == 1)
+        {
+            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
+            {
                 iscutting = true;
                 speed = 0f;
             }
@@ -88,19 +104,43 @@ public class Player : MonoBehaviour
                 speed = initialSpeed;
             }
         }
-        
+
     }
-    void OnDigging(){
-        if(handlingObj == 2){
-           if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift)){
-            isdigging = true;
-            speed = 0f;
+    void OnDigging()
+    {
+        if (handlingObj == 2)
+        {
+            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
+            {
+                isdigging = true;
+                speed = 0f;
             }
             else if (Input.GetMouseButtonUp(0))
             {
-            isdigging = false;
-            speed = initialSpeed;
-            } 
+                isdigging = false;
+                speed = initialSpeed;
+            }
+        }
+    }
+
+    void OnWantering()
+    {
+        if (handlingObj == 3)
+        {
+            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift) && playerItens.totalWater > 0)
+            {
+                iswatering = true;
+                speed = 0f;
+            }
+            else if ((Input.GetMouseButtonUp(0) || playerItens.totalWater <= 0) && !Input.GetKey(KeyCode.LeftShift))
+            {
+                iswatering = false;
+                speed = initialSpeed;
+            }
+            if (iswatering)
+            {
+                playerItens.totalWater -= 0.1f;
+            }
         }
     }
     void OnInput()
@@ -113,12 +153,12 @@ public class Player : MonoBehaviour
     }
     void OnRun()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = runspeed;
             isrunning = true;
         }
-        if(Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = initialSpeed;
             isrunning = false;
@@ -131,7 +171,6 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             isrolling = true;
-            speed = runspeed;
 
         }
         else if (Input.GetMouseButtonUp(1))

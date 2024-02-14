@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class SlotFarm : MonoBehaviour
 {
+    [Header("Components")]
     [SerializeField] private SpriteRenderer spriteRenderer; 
     [SerializeField] private Sprite hole;
     [SerializeField] private Sprite carrot;
+    [Header("Settings")]
     [SerializeField] private int digAmount;
+    [SerializeField] private bool detecting;
 
     private int initialdigAmount;
     // Start is called before the first frame update
@@ -34,6 +37,14 @@ public class SlotFarm : MonoBehaviour
         if (collision.CompareTag("Shove"))
         {
             Onhit();
+        }
+        if (collision.CompareTag("Watering can")){
+            detecting = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision){
+        if (collision.CompareTag("Watering can")){
+            detecting = false;
         }
     }
 }

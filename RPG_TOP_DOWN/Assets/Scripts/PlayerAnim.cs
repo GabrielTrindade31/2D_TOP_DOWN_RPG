@@ -20,12 +20,14 @@ public class PlayerAnim : MonoBehaviour
         OnRun();
     }
     #region movement
-    void OnMove(){
+    void OnMove()
+    {
         if (player._direction.sqrMagnitude > 0)
         {
-            if(player._isrolling)
+            if (player._isrolling)
             {
                 anim.SetTrigger("isRoll");
+                player._isrolling = false;
             }
             else
             {
@@ -45,16 +47,24 @@ public class PlayerAnim : MonoBehaviour
         {
             transform.eulerAngles = new Vector2(0, 180);
         }
-        if (player._iscutting){
+        if (player._iscutting)
+        {
             anim.SetInteger("transition", 3);
         }
-        if (player._isdigging){
+        if (player._isdigging)
+        {
             anim.SetInteger("transition", 4);
         }
+        if (player._iswatering)
+        {
+            anim.SetInteger("transition", 5);
+        }
     }
-    void OnRun(){
-        if(player._isrunning){
-          anim.SetInteger("transition", 2);  
+    void OnRun()
+    {
+        if (player._isrunning)
+        {
+            anim.SetInteger("transition", 2);
         }
     }
     #endregion

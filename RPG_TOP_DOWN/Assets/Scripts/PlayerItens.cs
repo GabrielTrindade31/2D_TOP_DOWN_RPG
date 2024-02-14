@@ -8,14 +8,20 @@ public class PlayerItens : MonoBehaviour
 
     public int TotalWood { get => totalWood; set => totalWood = value; }
     // Start is called before the first frame update
+    public float totalWater;
+    private float waterLimit = 50;
     void Start()
     {
-        
+        totalWood = 0;
+        totalWater = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void WaterLimit(float water)
     {
-        
+        if (totalWater <= waterLimit)
+        {
+            totalWater += water;
+        }
+
     }
 }

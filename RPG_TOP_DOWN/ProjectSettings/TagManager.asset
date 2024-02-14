@@ -7,6 +7,7 @@ TagManager:
   - Axe
   - Wood
   - Shove
+  - Watering can
   layers:
   - Default
   - TransparentFX
