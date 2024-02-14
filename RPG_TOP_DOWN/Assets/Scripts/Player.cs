@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     public int health;
     private PlayerItens playerItens;
+    private PlayerAnim playerAnim;
     [SerializeField] private float speed;
     [SerializeField] private float runspeed;
     private float initialSpeed;
@@ -50,25 +51,36 @@ public class Player : MonoBehaviour
         get { return direction; }
         set { direction = value; }
     }
+
+    public int HandlingObj
+    {
+        get => handlingObj;
+        set => handlingObj = value;
+    }
+
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         initialSpeed = speed;
         playerItens = GetComponent<PlayerItens>();
+        playerAnim = GetComponent<PlayerAnim>();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (playerAnim.Anim.GetInteger("transition") <= 2)
         {
-            handlingObj = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            handlingObj = 2;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            handlingObj = 3;
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                HandlingObj = 0;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                HandlingObj = 1;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                HandlingObj = 2;
+            }
         }
         //Control the direction in every frame of the player
         OnInput();
@@ -91,7 +103,7 @@ public class Player : MonoBehaviour
     #region Movement
     void Oncutting()
     {
-        if (handlingObj == 1)
+        if (HandlingObj == 0)
         {
             if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
             {
@@ -108,7 +120,7 @@ public class Player : MonoBehaviour
     }
     void OnDigging()
     {
-        if (handlingObj == 2)
+        if (HandlingObj == 1)
         {
             if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
             {
@@ -125,7 +137,7 @@ public class Player : MonoBehaviour
 
     void OnWantering()
     {
-        if (handlingObj == 3)
+        if (HandlingObj == 2)
         {
             if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift) && playerItens.totalWater > 0)
             {

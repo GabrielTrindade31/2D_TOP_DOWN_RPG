@@ -94,8 +94,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1042800533276557668}
   hole: {fileID: -373817857, guid: 123b1266515f5af48bfba124661ebec7, type: 3}
   carrot: {fileID: -2011542116, guid: 123b1266515f5af48bfba124661ebec7, type: 3}
-  digAmount: 4
-  waterAmount: 25
+  digAmount: 2
+  waterAmount: 15
   detecting: 0
 --- !u!1 &4605003393253568339
 GameObject:

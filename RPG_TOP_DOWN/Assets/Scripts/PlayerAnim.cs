@@ -6,11 +6,14 @@ public class PlayerAnim : MonoBehaviour
 {
     private Player player;
     private Animator anim;
+
+    public Animator Anim { get => anim; set => anim = value; }
+
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Player>();
-        anim = GetComponent<Animator>();
+        Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,17 +29,17 @@ public class PlayerAnim : MonoBehaviour
         {
             if (player._isrolling)
             {
-                anim.SetTrigger("isRoll");
+                Anim.SetTrigger("isRoll");
                 player._isrolling = false;
             }
             else
             {
-                anim.SetInteger("transition", 1);
+                Anim.SetInteger("transition", 1);
             }
         }
         else
         {
-            anim.SetInteger("transition", 0);
+            Anim.SetInteger("transition", 0);
         }
 
         if (player._direction.x > 0)
@@ -49,22 +52,22 @@ public class PlayerAnim : MonoBehaviour
         }
         if (player._iscutting)
         {
-            anim.SetInteger("transition", 3);
+            Anim.SetInteger("transition", 3);
         }
         if (player._isdigging)
         {
-            anim.SetInteger("transition", 4);
+            Anim.SetInteger("transition", 4);
         }
         if (player._iswatering)
         {
-            anim.SetInteger("transition", 5);
+            Anim.SetInteger("transition", 5);
         }
     }
     void OnRun()
     {
         if (player._isrunning)
         {
-            anim.SetInteger("transition", 2);
+            Anim.SetInteger("transition", 2);
         }
     }
     #endregion

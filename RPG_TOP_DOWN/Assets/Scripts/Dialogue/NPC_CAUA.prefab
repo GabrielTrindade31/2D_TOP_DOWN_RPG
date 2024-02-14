@@ -44,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 6270723984217412097}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c5d489579787a9a4eaee6f74e7fa39bb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5a21faa93d452ed479abdaf830c1d92a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -148,10 +148,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 930553950, guid: 02979e145d501654093b70e96ee20dd0, type: 3}
   m_Color: {r: 0.72156864, g: 0.43529415, b: 0.3137255, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 6, y: 4}
@@ -244,8 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622e50c6ad0b22942be672a4525c16b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueRange: 0
+  dialogueRange: 0.61
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
-  dialogue: {fileID: 0}
+    m_Bits: 256
+  dialogue: {fileID: 11400000, guid: 594e989687eceef48aaf18cb25fc2e4e, type: 2}
+  profileSprite1: {fileID: 21300000, guid: 0f5f6926a06dc3d478518e3fabcae8b3, type: 3}
