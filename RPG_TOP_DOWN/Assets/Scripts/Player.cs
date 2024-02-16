@@ -4,7 +4,7 @@ using UnityEngine;
 //Code that control the player
 public class Player : MonoBehaviour
 {
-
+    public bool ispaused;
     public int health;
     private PlayerItens playerItens;
     private PlayerAnim playerAnim;
@@ -67,28 +67,31 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        if (playerAnim.Anim.GetInteger("transition") <= 2)
+        if (!ispaused)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (playerAnim.Anim.GetInteger("transition") <= 2)
             {
-                HandlingObj = 0;
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    HandlingObj = 0;
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    HandlingObj = 1;
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    HandlingObj = 2;
+                }
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                HandlingObj = 1;
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                HandlingObj = 2;
-            }
+            //Control the direction in every frame of the player
+            OnInput();
+            OnRun();
+            Onrolling();
+            Oncutting();
+            OnDigging();
+            OnWantering();
         }
-        //Control the direction in every frame of the player
-        OnInput();
-        OnRun();
-        Onrolling();
-        Oncutting();
-        OnDigging();
-        OnWantering();
 
     }
     private void FixedUpdate()

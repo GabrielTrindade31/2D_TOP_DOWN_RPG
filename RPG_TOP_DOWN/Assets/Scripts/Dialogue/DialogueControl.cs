@@ -10,6 +10,8 @@ public class DialogueControl : MonoBehaviour
     public Image profileSprite;//sprite of the actor
     public TextMeshProUGUI speechText;//text of the speech
     public Text actorNameText;//Name of npc
+    private Player player;
+    private NPC_Dialogue npc;
 
     [Header("Settings")]
     public float typingSpeed;//speed of the speech
@@ -37,7 +39,7 @@ public class DialogueControl : MonoBehaviour
 
     void Start()
     {
-        
+        player = FindAnyObjectByType<Player>();
     }
 
     void Update()
@@ -70,6 +72,7 @@ public class DialogueControl : MonoBehaviour
                 dialolueObj.SetActive(false);
                 sentences = null;
                 isShowing = false;
+                player.ispaused = false;
             }
         }
     }
@@ -81,6 +84,7 @@ public class DialogueControl : MonoBehaviour
             sentences = txt;
             StartCoroutine(TypeSentence());
             isShowing = true;
+            player.ispaused = true;
         }
     }
 }

@@ -6,7 +6,8 @@ public class PlayerAnim : MonoBehaviour
 {
     private Player player;
     private Animator anim;
-
+    private Casting casting;
+    
     public Animator Anim { get => anim; set => anim = value; }
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class PlayerAnim : MonoBehaviour
     {
         player = GetComponent<Player>();
         Anim = GetComponent<Animator>();
+        casting = FindAnyObjectByType<Casting>();
     }
 
     // Update is called once per frame
@@ -71,4 +73,14 @@ public class PlayerAnim : MonoBehaviour
         }
     }
     #endregion
+
+    public void OnCastingStart(){
+        anim.SetTrigger("isCasting");
+        player.ispaused = true;
+    }
+
+    public void OnCastingEnd(){
+        casting.OnCasting();
+        player.ispaused = false;
+    }
 }
