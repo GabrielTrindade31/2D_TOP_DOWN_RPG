@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 //Code that control the player
 public class Player : MonoBehaviour
@@ -65,8 +66,14 @@ public class Player : MonoBehaviour
         playerItens = GetComponent<PlayerItens>();
         playerAnim = GetComponent<PlayerAnim>();
     }
-    private void Update()
+    void FixedUpdate()
     {
+             
+        OnMove();
+    }
+    private void Update()
+    {   
+        
         if (!ispaused)
         {
             if (playerAnim.Anim.GetInteger("transition") <= 2)
@@ -94,11 +101,11 @@ public class Player : MonoBehaviour
         }
 
     }
-    private void FixedUpdate()
-    {
-        //Code that control the position of the rigibody in the scene, with this we control the fisics
-        OnMove();
-    }
+    // private void FixedUpdate()
+    // {
+    //     //Code that control the position of the rigibody in the scene, with this we control the fisics
+    //     OnMove();
+    // }
     void Atack()
     {
         //code to atack

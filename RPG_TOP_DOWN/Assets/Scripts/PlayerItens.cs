@@ -13,6 +13,7 @@ public class PlayerItens : MonoBehaviour
     public float CarrotLimit { get => carrotLimit; set => carrotLimit = value; }
     public float WoodLimit { get => woodLimit; set => woodLimit = value; }
     public int Fishs { get => fish; set => fish = value; }
+    public float FishLimit { get => fishLimit; set => fishLimit = value; }
 
     // Start is called before the first frame update
     public float totalWater;
@@ -27,7 +28,7 @@ public class PlayerItens : MonoBehaviour
         totalWater = 0;
         carrot = 0;
         Fishs = 0;
-        
+
     }
 
     public void WaterLimit(float water)
