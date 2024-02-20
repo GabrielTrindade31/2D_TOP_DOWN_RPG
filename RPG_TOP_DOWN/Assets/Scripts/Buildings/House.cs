@@ -40,6 +40,7 @@ public class House : MonoBehaviour
             timeCount += Time.deltaTime;
             if (timeCount < timeAmount / 3)
             {
+                transform.position = Vector2.MoveTowards(transform.position, point1.position, speed * Time.deltaTime);
                 player.transform.position = point1.position;
             }
             else if (timeCount < timeAmount * 2 / 3)
