@@ -18,17 +18,19 @@ public class House : MonoBehaviour
 
     private Player player;
     private PlayerAnim playerAnim;
+    private PlayerItens playeritens;
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
         playerAnim = player.GetComponent<PlayerAnim>();
+        playeritens = player.GetComponent<PlayerItens>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (dectectingPlayer && Input.GetKeyDown(KeyCode.F))
+        if (dectectingPlayer && Input.GetKeyDown(KeyCode.F) && playeritens.totalWood >= 3)
         {
             isBeginning = true;
             playerAnim.OnHammeringStart();
