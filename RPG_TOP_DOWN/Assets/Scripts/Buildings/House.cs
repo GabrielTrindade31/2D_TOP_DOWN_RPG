@@ -33,14 +33,14 @@ public class House : MonoBehaviour
             isBeginning = true;
             playerAnim.OnHammeringStart();
             HouseSprite.color = startColor;
-            player.transform.position = point1.position;
+            transform.position = Vector2.MoveTowards(transform.position, point1.position, speed * Time.deltaTime);
         }
+        transform.position = Vector2.MoveTowards(transform.position, point1.position, speed * Time.deltaTime);
         if (isBeginning)
         {
             timeCount += Time.deltaTime;
             if (timeCount < timeAmount / 3)
             {
-                transform.position = Vector2.MoveTowards(transform.position, point1.position, speed * Time.deltaTime);
                 player.transform.position = point1.position;
             }
             else if (timeCount < timeAmount * 2 / 3)
