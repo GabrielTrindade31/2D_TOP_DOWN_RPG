@@ -11,11 +11,13 @@ public class NPC_Dialogue : MonoBehaviour
     // Start is called before the first frame update
     bool palyerHit;
     public Sprite profileSprite1;
+    public Player player;
     
     
     private void Start()
     {
         GetNPCInfo(); 
+        player = FindAnyObjectByType<Player>();
     }
     private List<string> sentences = new List<string>();
     void Update()
@@ -23,6 +25,7 @@ public class NPC_Dialogue : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && palyerHit)
         {
             DialogueControl.instance.Speech(sentences.ToArray());
+            player.ispaused = true;
         }
     }
 
@@ -58,6 +61,7 @@ public class NPC_Dialogue : MonoBehaviour
         {
             palyerHit = true;
             DialogueControl.instance.profileSprite.sprite = profileSprite1;
+            player.ispaused = true;
         }
         else
         {
