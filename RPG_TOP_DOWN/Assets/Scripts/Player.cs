@@ -68,12 +68,12 @@ public class Player : MonoBehaviour
     }
     void FixedUpdate()
     {
-             
+
         OnMove();
     }
     private void Update()
-    {   
-        
+    {
+
         if (!ispaused)
         {
             if (playerAnim.Anim.GetInteger("transition") <= 2)
@@ -202,4 +202,7 @@ public class Player : MonoBehaviour
         }
     }
     #endregion
+
+
+
 }

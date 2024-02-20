@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c953b27e1a722641b49d8af80d37e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ispaused: 0
   health: 0
   speed: 5
   runspeed: 8
@@ -226,6 +227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalWood: 0
+  carrot: 0
+  fish: 0
   totalWater: 0
 --- !u!1 &5020230262114987318
 GameObject:
