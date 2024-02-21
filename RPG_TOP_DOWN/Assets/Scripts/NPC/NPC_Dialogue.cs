@@ -25,7 +25,6 @@ public class NPC_Dialogue : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && palyerHit)
         {
             DialogueControl.instance.Speech(sentences.ToArray());
-            player.ispaused = true;
         }
     }
 
@@ -61,7 +60,6 @@ public class NPC_Dialogue : MonoBehaviour
         {
             palyerHit = true;
             DialogueControl.instance.profileSprite.sprite = profileSprite1;
-            player.ispaused = true;
         }
         else
         {

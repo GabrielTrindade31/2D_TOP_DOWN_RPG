@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public int health;
     private PlayerItens playerItens;
     private PlayerAnim playerAnim;
-    [SerializeField] private float speed;
+    [SerializeField] public float speed;
     [SerializeField] private float runspeed;
     private float initialSpeed;
     private bool isrunning;
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
     {
         if (HandlingObj == 0)
         {
-            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift) && !ispaused)
             {
                 iscutting = true;
                 speed = 0f;
@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
     {
         if (HandlingObj == 1)
         {
-            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift) && !ispaused)
             {
                 isdigging = true;
                 speed = 0f;
@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
     {
         if (HandlingObj == 2)
         {
-            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift) && playerItens.totalWater > 0)
+            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift) && playerItens.totalWater > 0 && !ispaused)
             {
                 iswatering = true;
                 speed = 0f;
@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
     }
     void OnRun()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !ispaused)
         {
             speed = runspeed;
             isrunning = true;
@@ -190,7 +190,7 @@ public class Player : MonoBehaviour
     void Onrolling()
     {
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !ispaused)
         {
             isrolling = true;
 

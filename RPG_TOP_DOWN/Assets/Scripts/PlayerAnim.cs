@@ -27,49 +27,59 @@ public class PlayerAnim : MonoBehaviour
     #region movement
     void OnMove()
     {
-        if (player._direction.sqrMagnitude > 0)
+        if (!player.ispaused)
         {
-            if (player._isrolling)
+            if (player._direction.sqrMagnitude > 0)
             {
-                Anim.SetTrigger("isRoll");
-                player._isrolling = false;
+                if (player._isrolling)
+                {
+                    Anim.SetTrigger("isRoll");
+                    player._isrolling = false;
+                }
+                else
+                {
+                    Anim.SetInteger("transition", 1);
+                }
             }
             else
             {
-                Anim.SetInteger("transition", 1);
+                Anim.SetInteger("transition", 0);
+            }
+            if (player._direction.x > 0)
+            {
+                transform.eulerAngles = new Vector2(0, 0);
+            }
+            if (player._direction.x < 0)
+            {
+                transform.eulerAngles = new Vector2(0, 180);
+            }
+            if (player._iscutting)
+            {
+                Anim.SetInteger("transition", 3);
+            }
+            if (player._isdigging)
+            {
+                Anim.SetInteger("transition", 4);
+            }
+            if (player._iswatering)
+            {
+                Anim.SetInteger("transition", 5);
             }
         }
-        else
+        if(player.ispaused)
         {
             Anim.SetInteger("transition", 0);
-        }
-
-        if (player._direction.x > 0)
-        {
-            transform.eulerAngles = new Vector2(0, 0);
-        }
-        if (player._direction.x < 0)
-        {
-            transform.eulerAngles = new Vector2(0, 180);
-        }
-        if (player._iscutting)
-        {
-            Anim.SetInteger("transition", 3);
-        }
-        if (player._isdigging)
-        {
-            Anim.SetInteger("transition", 4);
-        }
-        if (player._iswatering)
-        {
-            Anim.SetInteger("transition", 5);
         }
     }
     void OnRun()
     {
-        if (player._isrunning)
+        if (player._isrunning && !player.ispaused)
         {
             Anim.SetInteger("transition", 2);
+        }
+         if(player.ispaused)
+        {
+            Anim.SetInteger("transition", 0);
         }
     }
     #endregion
@@ -88,10 +98,12 @@ public class PlayerAnim : MonoBehaviour
     public void OnHammeringStart()
     {
         anim.SetBool("building", true);
+        player.ispaused = true;
     }
 
     public void OnHammeringEnd()
     {
         anim.SetBool("building", false);
+        player.ispaused = false;
     }
 }

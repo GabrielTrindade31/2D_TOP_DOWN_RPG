@@ -5,6 +5,7 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
 
+    [SerializeField] private GameObject houseCollider;
     [SerializeField] private SpriteRenderer HouseSprite;
     [SerializeField] private Transform point1;
     [SerializeField] private Transform point2;
@@ -30,20 +31,22 @@ public class House : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dectectingPlayer && Input.GetKeyDown(KeyCode.F) && playeritens.totalWood >= 3)
+        if (dectectingPlayer && Input.GetKeyDown(KeyCode.F) && playeritens.TotalWood >= 3)
         {
+            
             isBeginning = true;
             playerAnim.OnHammeringStart();
             HouseSprite.color = startColor;
-            transform.position = Vector2.MoveTowards(transform.position, point1.position, speed * Time.deltaTime);
+            playeritens.TotalWood -= 3;
         }
-        transform.position = Vector2.MoveTowards(transform.position, point1.position, speed * Time.deltaTime);
+       
         if (isBeginning)
         {
             timeCount += Time.deltaTime;
             if (timeCount < timeAmount / 3)
             {
                 player.transform.position = point1.position;
+                // player.transform.position = Vector3.MoveTowards(player.transform.position, point1.position, 5 * Time.deltaTime);
             }
             else if (timeCount < timeAmount * 2 / 3)
             {
@@ -61,6 +64,7 @@ public class House : MonoBehaviour
                 playerAnim.OnHammeringEnd();
                 HouseSprite.color = endColor;
                 player.ispaused = false;
+                houseCollider.SetActive(true);
             }
         }
     }
