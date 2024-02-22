@@ -73,6 +73,7 @@ public class DialogueControl : MonoBehaviour
                 sentences = null;
                 isShowing = false;
                 player.ispaused = false;
+                playerAnim.Anim.SetInteger("transition", 0);
             }
         }
     }

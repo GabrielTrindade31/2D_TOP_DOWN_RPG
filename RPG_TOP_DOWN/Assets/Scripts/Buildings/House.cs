@@ -31,13 +31,13 @@ public class House : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dectectingPlayer && Input.GetKeyDown(KeyCode.F) && playeritens.TotalWood >= 3)
+        if (dectectingPlayer && Input.GetKeyDown(KeyCode.F) && playeritens.TotalWood >= 2)
         {
             
             isBeginning = true;
             playerAnim.OnHammeringStart();
             HouseSprite.color = startColor;
-            playeritens.TotalWood -= 3;
+            playeritens.TotalWood -= 2;
         }
        
         if (isBeginning)
