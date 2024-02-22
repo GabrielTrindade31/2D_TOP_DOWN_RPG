@@ -38,7 +38,8 @@ public class SlotFarm : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && colleting)
                 {
                     spriteRenderer.sprite = hole;
-                    playeritems.TotalCarrot = Random.Range(1, 3);
+                    playeritems.TotalCarrot += Random.Range(1, 3);
+
                     currentWater = 0;
                 }
             }
