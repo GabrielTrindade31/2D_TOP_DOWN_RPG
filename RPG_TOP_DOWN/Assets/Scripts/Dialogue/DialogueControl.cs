@@ -11,6 +11,7 @@ public class DialogueControl : MonoBehaviour
     public TextMeshProUGUI speechText;//text of the speech
     public Text actorNameText;//Name of npc
     private Player player;
+    private PlayerAnim playeranim;
     private NPC_Dialogue npc;
 
     [Header("Settings")]
@@ -40,6 +41,7 @@ public class DialogueControl : MonoBehaviour
     void Start()
     {
         player = FindAnyObjectByType<Player>();
+        playeranim = player.GetComponent<PlayerAnim>();
     }
 
     void Update()
@@ -73,7 +75,7 @@ public class DialogueControl : MonoBehaviour
                 sentences = null;
                 isShowing = false;
                 player.ispaused = false;
-                playerAnim.Anim.SetInteger("transition", 0);
+                playeranim.Anim.SetInteger("transition", 0);
             }
         }
     }
