@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3849709604308330856}
   - component: {fileID: 7154237332374806100}
   - component: {fileID: 2406326595288497767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leaf_Paticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.07000017, y: 0.25, z: 0}
-  m_LocalScale: {x: 1, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4239401927273591330}
@@ -288,7 +288,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.5
-      minScalar: 0.1
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1300,7 +1300,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1308,7 +1308,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0, g: 0.9433962, b: 0.15757287, a: 1}
         key1: {r: 0, g: 0, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -4797,7 +4797,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 12
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4840,7 +4840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5025764197825024769}
   - component: {fileID: 1450016579352546168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4924,7 +4924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4952549706372061651}
   - component: {fileID: 1212596404885349538}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite_leafs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5011,7 +5011,8 @@ GameObject:
   - component: {fileID: 843633014109373554}
   - component: {fileID: 1100756461400360228}
   - component: {fileID: 110782505998586695}
-  m_Layer: 0
+  - component: {fileID: 6471479446711158630}
+  m_Layer: 7
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5141,8 +5142,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f1d0de20804b4491bb7c3ab7f1db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeHealth: 10
+  treeHealth: 4
   anim: {fileID: 4123217060978152467}
   woodPrefab: {fileID: 2508683893004364857, guid: a9af6eb2c9a893a47a4e00e7fc767232, type: 3}
   totalWood: 3
-  leafs: {fileID: 0}
+  leafs: {fileID: 7154237332374806100}
+--- !u!114 &6471479446711158630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764847378935440301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
