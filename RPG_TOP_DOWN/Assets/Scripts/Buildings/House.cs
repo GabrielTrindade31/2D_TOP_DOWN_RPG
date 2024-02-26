@@ -46,6 +46,7 @@ public class House : MonoBehaviour
             if (timeCount < timeAmount / 3)
             {
                 player.transform.position = point1.position;
+                player.transform.rotation = Quaternion.Euler(0, 0, 0);
                 // player.transform.position = Vector3.MoveTowards(player.transform.position, point1.position, 5 * Time.deltaTime);
             }
             else if (timeCount < timeAmount * 2 / 3)

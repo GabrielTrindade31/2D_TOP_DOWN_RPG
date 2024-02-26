@@ -66,7 +66,7 @@ public class PlayerAnim : MonoBehaviour
                 Anim.SetInteger("transition", 5);
             }
         }
-        if(player.ispaused)
+        if (player.ispaused)
         {
             Anim.SetInteger("transition", 0);
         }
@@ -77,7 +77,7 @@ public class PlayerAnim : MonoBehaviour
         {
             Anim.SetInteger("transition", 2);
         }
-         if(player.ispaused)
+        if (player.ispaused)
         {
             Anim.SetInteger("transition", 0);
         }
@@ -105,5 +105,9 @@ public class PlayerAnim : MonoBehaviour
     {
         anim.SetBool("building", false);
         player.ispaused = false;
+    }
+    public void Onhit()
+    {
+        anim.SetTrigger("hit");
     }
 }
