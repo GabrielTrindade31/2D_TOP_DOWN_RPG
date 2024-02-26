@@ -7,7 +7,9 @@ public class PlayerAnim : MonoBehaviour
     private Player player;
     private Animator anim;
     private Casting casting;
-
+    private bool isHitting;
+    private float recoveryTime = 1f;
+    private float timeCount;
     public Animator Anim { get => anim; set => anim = value; }
 
     // Start is called before the first frame update
@@ -23,6 +25,15 @@ public class PlayerAnim : MonoBehaviour
     {
         OnMove();
         OnRun();
+        timeCount += Time.deltaTime;
+        if (isHitting)
+        {
+            if (timeCount >= recoveryTime)
+            {
+                isHitting = false;
+                timeCount = 0f;
+            }
+        }
     }
     #region movement
     void OnMove()
@@ -108,6 +119,10 @@ public class PlayerAnim : MonoBehaviour
     }
     public void Onhit()
     {
-        anim.SetTrigger("hit");
+        if (!isHitting)
+        {
+            anim.SetTrigger("hit");
+            isHitting = true;
+        }
     }
 }
