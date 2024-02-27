@@ -66,6 +66,7 @@ public class DialogueControl : MonoBehaviour
                 index++;
                 speechText.text = "";
                 StartCoroutine(TypeSentence());
+                player.ispaused = true;
             }
             else
             {

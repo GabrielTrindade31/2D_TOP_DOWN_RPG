@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public bool ispaused;
-    public int health;
+    public float health = 200f;
     private PlayerItens playerItens;
     private PlayerAnim playerAnim;
     [SerializeField] public float speed;
@@ -68,8 +68,10 @@ public class Player : MonoBehaviour
     }
     void FixedUpdate()
     {
-
-        OnMove();
+        if (!ispaused)
+        {
+            OnMove();
+        }
     }
     private void Update()
     {

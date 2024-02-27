@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
+
+
+    [SerializeField] private Transform attackpoint;
+    [SerializeField] private float radius;
+    [SerializeField] private LayerMask enemyLayer;
     private Player player;
     private Animator anim;
     private Casting casting;
     private bool isHitting;
-    private float recoveryTime = 1f;
+    private float recoveryTime = 2.5f;
     private float timeCount;
     public Animator Anim { get => anim; set => anim = value; }
+
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +101,23 @@ public class PlayerAnim : MonoBehaviour
     }
     #endregion
 
+    #region Attack
+
+    public void OnAtack(){
+
+        Collider2D hit = Physics2D.OverlapCircle(attackpoint.position, radius,enemyLayer);
+
+        if (hit != null){
+            hit.GetComponentInChildren<AnimationControl>().Onhit();
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(attackpoint.position, radius);
+    }
+
+
+    #endregion
     public void OnCastingStart()
     {
         anim.SetTrigger("isCasting");
@@ -122,6 +145,7 @@ public class PlayerAnim : MonoBehaviour
         if (!isHitting)
         {
             anim.SetTrigger("hit");
+            player.health -= 10f;
             isHitting = true;
         }
     }

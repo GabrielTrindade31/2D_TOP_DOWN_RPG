@@ -9,11 +9,13 @@ public class AnimationControl : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     private Animator anim;
     private PlayerAnim playerAnim;
+    private Skeleton skeleton;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         playerAnim = FindObjectOfType<PlayerAnim>();
+        skeleton = GetComponentInParent<Skeleton>();
     }
 
     // Update is called once per frame
@@ -27,15 +29,36 @@ public class AnimationControl : MonoBehaviour
     }
     public void Atack()
     {
-        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, playerLayer);
-        if (hit != null)
+        if (!skeleton.isdead)
         {
-            playerAnim.Onhit();
+            Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, playerLayer);
+            if (hit != null)
+            {
+                playerAnim.Onhit();
+            }
+        }
+
+    }
+    public void Onhit()
+    {
+
+
+        if (skeleton.health <= 20)
+        {
+            skeleton.health -= 20;
+            skeleton.healthBar.fillAmount = skeleton.health / 100;
+            skeleton.isdead = true;
+            anim.SetTrigger("death");
+
+            Destroy(skeleton.gameObject, 1f);
         }
         else
         {
-
+            skeleton.health -= 20;
+            skeleton.healthBar.fillAmount = skeleton.health / 100;
+            anim.SetTrigger("hit");
         }
+
     }
     private void OnDrawGizmosSelected()
     {
