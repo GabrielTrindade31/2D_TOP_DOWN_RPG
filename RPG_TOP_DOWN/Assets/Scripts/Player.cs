@@ -103,11 +103,7 @@ public class Player : MonoBehaviour
         }
 
     }
-    // private void FixedUpdate()
-    // {
-    //     //Code that control the position of the rigibody in the scene, with this we control the fisics
-    //     OnMove();
-    // }
+
     void Atack()
     {
         //code to atack
