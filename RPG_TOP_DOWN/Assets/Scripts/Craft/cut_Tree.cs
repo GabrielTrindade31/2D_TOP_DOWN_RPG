@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class cut_Tree : MonoBehaviour
@@ -26,6 +27,10 @@ public class cut_Tree : MonoBehaviour
             for (int i = 0; i < totalWood; i++)
             {
                 Instantiate(woodPrefab, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f), transform.rotation);
+                //Create a code to KNOW IF THE woodPrefab is instatiated
+                         
+
+                
             }
             // Create the cuted tree
             anim.SetTrigger("cut");
