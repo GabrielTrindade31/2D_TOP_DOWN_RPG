@@ -9,7 +9,7 @@ public class DialogueControl : MonoBehaviour
     public GameObject dialolueObj;//dialogue windown
     public Image profileSprite;//sprite of the actor
     public TextMeshProUGUI speechText;//text of the speech
-    public Text actorNameText;//Name of npc
+    public TextMeshProUGUI actorNameText;//Name of npc
     private Player player;
     private PlayerAnim playeranim;
     private NPC_Dialogue npc;
@@ -18,10 +18,12 @@ public class DialogueControl : MonoBehaviour
     public float typingSpeed;//speed of the speech
 
     //variables of control
-    [HideInInspector]public bool isShowing;// if the windown is visible
+    [HideInInspector] public bool isShowing;// if the windown is visible
 
     private int index;// infex of the setences
     private string[] sentences;//array of the sentences
+    private string[] actor;//array of the names
+    private Sprite[] actorProfile;//array of the profile
     [System.Serializable]
     public enum idiom
     {
@@ -65,12 +67,16 @@ public class DialogueControl : MonoBehaviour
             {
                 index++;
                 speechText.text = "";
+                profileSprite.sprite = actorProfile[index];
+                actorNameText.text = actor[index];
                 StartCoroutine(TypeSentence());
                 player.ispaused = true;
+
             }
             else
             {
                 speechText.text = "";
+                actorNameText.text = "";
                 index = 0;
                 dialolueObj.SetActive(false);
                 sentences = null;
@@ -80,12 +86,16 @@ public class DialogueControl : MonoBehaviour
             }
         }
     }
-    public void Speech(string[] txt)
+    public void Speech(string[] txt, string[] actorname, Sprite[] profile)
     {
         if (!isShowing)
         {
             dialolueObj.SetActive(true);
             sentences = txt;
+            actor = actorname;
+            actorProfile = profile;
+            profileSprite.sprite = actorProfile[index];
+            actorNameText.text = actor[index];
             StartCoroutine(TypeSentence());
             isShowing = true;
             player.ispaused = true;

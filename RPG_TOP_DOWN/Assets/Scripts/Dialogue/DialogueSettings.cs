@@ -14,6 +14,7 @@ public class DialogueSettings : ScriptableObject
    [Header("Dialogue")]
    public Sprite speakerSprite;
    public string sentence;
+   public string actorName;
    public List<Sentences> dialogues = new List<Sentences>();
 }
 
@@ -53,7 +54,7 @@ public class BuilderEditor : Editor
         if(GUILayout.Button("Create Dialogue")){
             if(ds.sentence != ""){
                 ds.dialogues.Add(s);
-
+                ds.actorName = null;
                 ds.speakerSprite = null;
                 ds.sentence = "";
             }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2528386910670586643}
   - component: {fileID: 7211687567765808185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8585277323602685942}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: point2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1501478121369851178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: point1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 5749213811263984062}
   - component: {fileID: 7670896183003819334}
   - component: {fileID: 3848116509946336160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300775568948500432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: point3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 6583628334143291996}
   - component: {fileID: 4518335743007428414}
   - component: {fileID: 9185984357621095819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}

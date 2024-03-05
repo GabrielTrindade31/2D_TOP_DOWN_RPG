@@ -10,6 +10,9 @@ public class NPC_Dialogue : MonoBehaviour
     public DialogueSettings dialogue;
     // Start is called before the first frame update
     bool palyerHit;
+    private List<string> sentences = new List<string>();
+    private List<string> actorname = new List<string>();
+    private List<Sprite> profileSprite = new List<Sprite>();
     public Sprite profileSprite1;
     public Player player;
     
@@ -19,12 +22,12 @@ public class NPC_Dialogue : MonoBehaviour
         GetNPCInfo(); 
         player = FindAnyObjectByType<Player>();
     }
-    private List<string> sentences = new List<string>();
+    
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && palyerHit)
         {
-            DialogueControl.instance.Speech(sentences.ToArray());
+            DialogueControl.instance.Speech(sentences.ToArray(), actorname.ToArray(), profileSprite.ToArray());
         }
     }
 
@@ -43,7 +46,9 @@ public class NPC_Dialogue : MonoBehaviour
                     sentences.Add(dialogue.dialogues[i].sentence.spanish);
                     break;
             }
-            
+            actorname.Add(dialogue.dialogues[i].actorName);
+            profileSprite.Add(dialogue.dialogues[i].profile);
+
         }
     }
 
@@ -59,7 +64,7 @@ public class NPC_Dialogue : MonoBehaviour
         if (hit != null)
         {
             palyerHit = true;
-            DialogueControl.instance.profileSprite.sprite = profileSprite1;
+            // DialogueControl.instance.profileSprite.sprite = profileSprite1;
         }
         else
         {

@@ -7,10 +7,14 @@ public class Skeleton : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private AnimationControl animcontrol;
+
+    public LayerMask playerLayer;
+    public float followingRange;
     public Image healthBar;
     public bool isdead;
     public float health = 100;
     private Player player;
+    private bool detectPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +27,9 @@ public class Skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isdead)
+        if (!isdead && detectPlayer)
         {
+            agent.isStopped = false;
             agent.SetDestination(player.transform.position);
             if (Vector2.Distance(transform.position, player.transform.position) <= agent.stoppingDistance)
             {
@@ -45,4 +50,30 @@ public class Skeleton : MonoBehaviour
             }
         }
     }
+    private void FixedUpdate()
+    {
+        DetectPlayer();
+    }
+
+    public void DetectPlayer()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, followingRange, playerLayer);
+
+        if (hit != null)
+        {
+            detectPlayer = true;
+        }
+        else
+        {
+            detectPlayer = false;
+            animcontrol.PlayAnim(0);
+            agent.isStopped = true;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, followingRange);
+    }
+
 }

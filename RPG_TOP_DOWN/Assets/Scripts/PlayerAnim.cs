@@ -50,8 +50,9 @@ public class PlayerAnim : MonoBehaviour
             {
                 if (player._isrolling)
                 {
+                    if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling")){
                     Anim.SetTrigger("isRoll");
-                    player._isrolling = false;
+                    }
                 }
                 else
                 {
@@ -90,7 +91,7 @@ public class PlayerAnim : MonoBehaviour
     }
     void OnRun()
     {
-        if (player._isrunning && !player.ispaused)
+        if (player._isrunning && !player.ispaused && player._direction.sqrMagnitude > 0)
         {
             Anim.SetInteger("transition", 2);
         }
