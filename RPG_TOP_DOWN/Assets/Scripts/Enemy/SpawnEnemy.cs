@@ -17,7 +17,7 @@ public class SpawnEnemy : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 5f)
+        if (timer >= 200f)
         {
             SpawnInArea();
             timer = 0f;
@@ -26,15 +26,19 @@ public class SpawnEnemy : MonoBehaviour
         {
             SpawnInArea();
         }
-        spawner = Input.GetKey(KeyCode.Space);
+
+
     }
+
 
     public void SpawnInArea()
     {
+
         Vector3 spawnPos;
         int safetyNet = 0;
         do
         {
+            
             spawnPos = new Vector3(
                 Random.Range(-spawnRangeX, spawnRangeX),
                 Random.Range(-spawnRangeY, spawnRangeY),
@@ -46,9 +50,9 @@ public class SpawnEnemy : MonoBehaviour
                 Debug.LogWarning("Couldn't find a valid spawn position!");
                 return; // Exit the function if a valid position isn't found within 50 tries
             }
-        } while (Physics2D.OverlapCircle(spawnPos, radius, mask));
+        } while (Physics2D.OverlapCircle(spawnPos, 1.5f, mask));
 
         Instantiate(prefab, spawnPos, Quaternion.identity);
     }
-
+  
 }

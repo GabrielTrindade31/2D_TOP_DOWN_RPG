@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8538931247988192688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: point1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 815443526227935614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: point2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 5735912967101510371}
   - component: {fileID: 1884924117817048986}
   - component: {fileID: 611199415125357095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2766842002267536444}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -57.768723, y: 5.5028276, z: 0.5378159}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -174,7 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3653706712284863356}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: point3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5386009799008061466}
   - component: {fileID: 4078208885368545571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,13 +291,13 @@ GameObject:
   - component: {fileID: 979578087486466848}
   - component: {fileID: 7097128780597848740}
   - component: {fileID: 6350130101738089377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &979578087486466848
 Transform:
   m_ObjectHideFlags: 0

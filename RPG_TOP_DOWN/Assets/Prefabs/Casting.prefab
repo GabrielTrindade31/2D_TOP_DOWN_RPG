@@ -115,4 +115,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dectectingPlayer: 0
   fishprefab: {fileID: 4860818450745905064, guid: deb09385c84fd4342ab1ac1bf8cfa5a3, type: 3}
-  percentage: 80
+  percentage: 100
