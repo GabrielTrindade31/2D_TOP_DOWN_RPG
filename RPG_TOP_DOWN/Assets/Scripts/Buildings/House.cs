@@ -33,9 +33,8 @@ public class House : MonoBehaviour
     {
         if (dectectingPlayer && Input.GetKeyDown(KeyCode.F) && playeritens.TotalWood >= 2)
         {
-            
+            playerAnim.OnHammeringStart();            
             isBeginning = true;
-            playerAnim.OnHammeringStart();
             HouseSprite.color = startColor;
             playeritens.TotalWood -= 2;
         }
@@ -45,17 +44,20 @@ public class House : MonoBehaviour
             timeCount += Time.deltaTime;
             if (timeCount < timeAmount / 3)
             {
+                playerAnim.OnHammeringStart();
                 player.transform.position = point1.position;
                 player.transform.rotation = Quaternion.Euler(0, 0, 0);
                 // player.transform.position = Vector3.MoveTowards(player.transform.position, point1.position, 5 * Time.deltaTime);
             }
             else if (timeCount < timeAmount * 2 / 3)
             {
+                playerAnim.OnHammeringStart();
                 player.transform.rotation = Quaternion.Euler(0, -180, 0);
                 player.transform.position = point2.position;
             }
             else if (timeCount < timeAmount)
             {
+                playerAnim.OnHammeringStart();
                 player.transform.position = point3.position;
                 player.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
