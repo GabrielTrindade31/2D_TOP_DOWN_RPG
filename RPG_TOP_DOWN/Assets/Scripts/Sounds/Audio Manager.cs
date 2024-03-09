@@ -5,8 +5,10 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    
+
+    private Skeletonboss skeletonboss;
     [SerializeField] private AudioSource audiosource;
+
 
     void Awake()
     {
@@ -21,6 +23,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
+    void Update()
+    {
+        
+    }
     public void PlayBGM(AudioClip audio)
     {
         audiosource.clip = audio;

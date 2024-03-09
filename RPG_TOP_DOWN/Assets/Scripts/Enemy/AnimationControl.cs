@@ -10,12 +10,16 @@ public class AnimationControl : MonoBehaviour
     private Animator anim;
     private PlayerAnim playerAnim;
     private Skeleton skeleton;
+    private Skeletonboss skeletonboss;
+    private SpawnEnemy spawnEnemy;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         playerAnim = FindObjectOfType<PlayerAnim>();
         skeleton = GetComponentInParent<Skeleton>();
+        skeletonboss = GetComponentInParent<Skeletonboss>();
+        spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
     }
 
     // Update is called once per frame
@@ -29,12 +33,26 @@ public class AnimationControl : MonoBehaviour
     }
     public void Atack()
     {
-        if (!skeleton.isdead)
+        if (skeleton != null)
         {
-            Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, playerLayer);
-            if (hit != null)
+            if (!skeleton.isdead)
             {
-                playerAnim.Onhit();
+                Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, playerLayer);
+                if (hit != null)
+                {
+                    playerAnim.Onhit();
+                }
+            }
+        }
+        if (skeletonboss != null)
+        {
+            if (!skeletonboss.isdead)
+            {
+                Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, playerLayer);
+                if (hit != null)
+                {
+                    playerAnim.Onhit();
+                }
             }
         }
 
@@ -42,21 +60,42 @@ public class AnimationControl : MonoBehaviour
     public void Onhit()
     {
 
-
-        if (skeleton.health <= 20)
+        if (skeleton != null)
         {
-            skeleton.health -= 20;
-            skeleton.healthBar.fillAmount = skeleton.health / 100;
-            skeleton.isdead = true;
-            anim.SetTrigger("death");
-
-            Destroy(skeleton.gameObject, 1f);
+            if (skeleton.health <= 20)
+            {
+                skeleton.health -= 20;
+                skeleton.healthBar.fillAmount = skeleton.health / skeleton.maxHealth;
+                skeleton.isdead = true;
+                anim.SetTrigger("death");
+                spawnEnemy.OnEnemyDeath(GameObject.Find("Skeleton"));
+                Destroy(skeleton.gameObject, 1f);
+            }
+            else
+            {
+                skeleton.health -= 20;
+                skeleton.healthBar.fillAmount = skeleton.health / skeleton.maxHealth;
+                anim.SetTrigger("hit");
+            }
         }
-        else
+        if (skeletonboss != null)
         {
-            skeleton.health -= 20;
-            skeleton.healthBar.fillAmount = skeleton.health / 100;
-            anim.SetTrigger("hit");
+            if (skeletonboss.health <= 20)
+            {
+                skeletonboss.health -= 20;
+                skeletonboss.healthBar.fillAmount = skeletonboss.health / skeletonboss.maxHealth;
+                skeletonboss.isdead = true;
+                skeletonboss.isalive = false;
+                anim.SetTrigger("death");
+                spawnEnemy.OnEnemyDeath(GameObject.Find("Skeleton_boss"));
+                Destroy(skeletonboss.gameObject, 1f);
+            }
+            else
+            {
+                skeletonboss.health -= 20;
+                skeletonboss.healthBar.fillAmount = skeletonboss.health / skeletonboss.maxHealth;
+                anim.SetTrigger("hit");
+            }
         }
 
     }

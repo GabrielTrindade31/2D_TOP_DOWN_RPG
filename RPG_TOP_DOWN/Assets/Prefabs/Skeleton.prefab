@@ -131,6 +131,7 @@ MonoBehaviour:
   healthBar: {fileID: 3151827201863761359}
   isdead: 0
   health: 80
+  maxHealth: 80
 --- !u!195 &1482435516385261563
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -244,7 +245,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &8844118278285374087
 MonoBehaviour:
@@ -535,7 +536,7 @@ Animator:
   m_GameObject: {fileID: 7569440324222515533}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ebb38743d9beec48a09a5741df6b0b6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7d0e42048732ca048891878063248b78, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

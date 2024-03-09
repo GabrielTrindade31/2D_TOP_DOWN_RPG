@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-public class Skeleton : MonoBehaviour
+public class Skeletonboss : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private AnimationControl animcontrol;
@@ -11,7 +11,8 @@ public class Skeleton : MonoBehaviour
     public LayerMask playerLayer;
     public float followingRange;
     public Image healthBar;
-    public bool isdead;
+    public bool isdead = false;
+    public bool isalive;
     public float health = 100;
     public float maxHealth = 100;
     private Player player;
@@ -28,6 +29,9 @@ public class Skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health >0 && !isdead){
+            isalive = true;
+        }
         if (!isdead && detectPlayer)
         {
             agent.isStopped = false;
