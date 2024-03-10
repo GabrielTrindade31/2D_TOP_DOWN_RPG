@@ -999,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03b73b1b3f61aa48bb8544521ae3291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 2000
+  duration: 500
   gradient:
     serializedVersion: 2
     key0: {r: 0, g: 0.21801706, b: 0.7830189, a: 1}
