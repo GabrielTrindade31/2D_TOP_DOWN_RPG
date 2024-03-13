@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ed14995a3e5e4381920fa1f128ff4, type: 3}
+  m_Name: Sounds
+  m_EditorClassIdentifier: 
+  sounds:
+  - clipname: Whoosh
+    clip: {fileID: 8300000, guid: c1f0aaee6f12bce44bed8bf0665e4f49, type: 3}
+  - clipname: Click
+    clip: {fileID: 8300000, guid: 793607644e899b040858147509803225, type: 3}
+  - clipname: Click_negativo
+    clip: {fileID: 8300000, guid: 7ad9f81bd763ea64db7e909273d20977, type: 3}
