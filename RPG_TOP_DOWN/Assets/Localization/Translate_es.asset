@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Translate_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 4f3d1091801503d4a89f06041f66c892, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 11
+    m_Localized: SALIR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: REANUDAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Para ejecutar, presione "SHIFT". Puedes rodar presionando "M2" en
+      tu mouse.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: OPCIONES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: SALIR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: PANTALLA COMPLETA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: MUY BAJO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: BAJO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: MEDIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: ALTO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: MUY ALTO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: JUEGO TERMINADO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: ULTRA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Cuando hayas matado 10 esqueletos, aparecer\xE1 el jefe Phantom
+      Player Skeleton."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Tu misi\xF3n aqu\xED es probar todas las funciones y matar los
+      esqueletos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1
+    m_Localized: "Hola jugador, bienvenido a nuestro peque\xF1o mundo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Te dar\xE9 algunos consejos sobre c\xF3mo funciona este mundo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Hola jugador, creo que eres nuevo aqu\xED."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "Con el jefe asesinado, nuestro mundo se salvar\xE1 y todo llegar\xE1
+      a su fin."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: IDIOMA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: COMENZAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Otros te dar\xE1n diferentes consejos, as\xED que intenta comunicarte
+      con ellos."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Translate_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 4f3d1091801503d4a89f06041f66c892, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 11
+    m_Localized: EXIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: RESUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: To run, press "SHIFT". You can roll by pressing "M2" on your mouse.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: OPTIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: FULLSCREEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: VERY LOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: LOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: MEDIUM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: HIGH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: VERY HIGH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: GAME OVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: ULTRA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: When you have killed 10 skeletons, the Phantom Player Skeleton boss
+      will appear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Your mission here is test all the features and kill the skeletons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1
+    m_Localized: Hello player, Welcome to our little world
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: I will give you some tips on how this world functions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Hello player, I think you are new here
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: With the boss killed, our world will be saved and everything will
+      come to an end.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: START
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Others will give you different tips, so try communicating with them.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -43,7 +43,7 @@ public class BuilderEditor : Editor
         DialogueSettings ds = (DialogueSettings)target;
 
         Languages l = new Languages();
-        l.portuguese = ds.sentence;
+        l.english = ds.sentence;
 
         Sentences s  = new Sentences();
         s.profile = ds.speakerSprite;
