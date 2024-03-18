@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //Code that control the player
 public class Player : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     private bool isdigging;
     private bool iswatering;
     private int handlingObj;
+    public bool isdead;
     private Rigidbody2D rig;
     private Vector2 direction;
     // Start is called before the first frame update
@@ -76,7 +78,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
 
-        if (!ispaused)
+        if (!ispaused && !isdead)
         {
             if (playerAnim.Anim.GetInteger("transition") <= 2)
             {
@@ -100,6 +102,11 @@ public class Player : MonoBehaviour
             Oncutting();
             OnDigging();
             OnWantering();
+        }
+        if (health <= 0.1f && !isdead)
+        {
+            Ondeath();
+
         }
 
     }
@@ -125,6 +132,10 @@ public class Player : MonoBehaviour
             }
         }
 
+    }
+    void Ondeath()
+    {
+        playerAnim.Death();
     }
     void OnDigging()
     {

@@ -121,9 +121,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.5
+    - _ScaleRatioB: 0.40625
+    - _ScaleRatioC: 0.40625
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: NotoSans-Bold SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 514071788
   material: {fileID: -1935918220861299384}
-  materialHashCode: 0
+  materialHashCode: 625010380
   m_Version: 1.1.0
   m_SourceFontFileGUID: afff8a3c6ab9bcc4c8b061126d05bde1
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: afff8a3c6ab9bcc4c8b061126d05bde1, type: 3}
@@ -7824,7 +7824,10 @@ MonoBehaviour:
   m_FontFeatureTable:
     m_GlyphPairAdjustmentRecords: []
   fallbackFontAssets: []
-  m_FallbackFontAssetTable: []
+  m_FallbackFontAssetTable:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: bf4a1efc4c9b039479a0bb4a5ff658b5, type: 2}
+  - {fileID: 11400000, guid: 0648cede676e9f845b106616c5d180db, type: 2}
   m_CreationSettings:
     sourceFontFileName: 
     sourceFontFileGUID: afff8a3c6ab9bcc4c8b061126d05bde1

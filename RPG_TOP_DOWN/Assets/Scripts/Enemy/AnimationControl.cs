@@ -12,10 +12,12 @@ public class AnimationControl : MonoBehaviour
     private Skeleton skeleton;
     private Skeletonboss skeletonboss;
     private SpawnEnemy spawnEnemy;
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        player = FindAnyObjectByType<Player>();
         playerAnim = FindObjectOfType<PlayerAnim>();
         skeleton = GetComponentInParent<Skeleton>();
         skeletonboss = GetComponentInParent<Skeletonboss>();
@@ -38,7 +40,7 @@ public class AnimationControl : MonoBehaviour
             if (!skeleton.isdead)
             {
                 Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, playerLayer);
-                if (hit != null)
+                if (hit != null && player.isdead == false)
                 {
                     playerAnim.Onhit();
                 }
@@ -49,7 +51,7 @@ public class AnimationControl : MonoBehaviour
             if (!skeletonboss.isdead)
             {
                 Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, playerLayer);
-                if (hit != null)
+                if (hit != null && player.isdead == false)
                 {
                     playerAnim.Onhit();
                 }

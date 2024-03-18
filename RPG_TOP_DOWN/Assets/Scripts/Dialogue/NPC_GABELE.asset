@@ -20,6 +20,24 @@ MonoBehaviour:
   - actorName: Gabele
     profile: {fileID: 21300000, guid: 2173a1546ed7bb34ebc778745d6e6fce, type: 3}
     sentence:
-      english: 
-      portuguese: 
-      spanish: 
+      english: hello_player
+      portuguese: hello_player
+      spanish: hello_player
+  - actorName: Gabele
+    profile: {fileID: 21300000, guid: 2173a1546ed7bb34ebc778745d6e6fce, type: 3}
+    sentence:
+      english: your_mission
+      portuguese: your_mission
+      spanish: your_mission
+  - actorName: Gabele
+    profile: {fileID: 21300000, guid: 2173a1546ed7bb34ebc778745d6e6fce, type: 3}
+    sentence:
+      english: boss_mission
+      portuguese: boss_mission
+      spanish: boss_mission
+  - actorName: Gabele
+    profile: {fileID: 21300000, guid: 2173a1546ed7bb34ebc778745d6e6fce, type: 3}
+    sentence:
+      english: boss_killed
+      portuguese: boss_killed
+      spanish: boss_killed

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Networking.PlayerConnection;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAnim : MonoBehaviour
 {
@@ -146,8 +148,22 @@ public class PlayerAnim : MonoBehaviour
         if (!isHitting)
         {
             anim.SetTrigger("hit");
-            player.health -= 10f;
+            if (player.health <= 20f){
+                player.health = 0f;
+            } else{
+                player.health -= 20f;
+            }
+            
             isHitting = true;
         }
     }
+    public void Death(){
+        player.isdead = true;
+        anim.SetTrigger("death");
+        
+        
+    }
+    public void DeathEnd(){
+        SceneManager.LoadScene("GameOver");
+        }
 }

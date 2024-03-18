@@ -15,16 +15,29 @@ MonoBehaviour:
   actor: {fileID: 6270723984217412097, guid: c0c872e8c2d8def4db9ae4d8bdc19af0, type: 3}
   speakerSprite: {fileID: 0}
   sentence: 
+  actorName: 
   dialogues:
   - actorName: CAUA
     profile: {fileID: 21300000, guid: 0f5f6926a06dc3d478518e3fabcae8b3, type: 3}
     sentence:
-      english: HELLO MAN
-      portuguese: FALA MANO
-      spanish: q
+      english: hello_playercaua
+      portuguese: hello_playercaua
+      spanish: hello_playercaua
   - actorName: CAUA
     profile: {fileID: 21300000, guid: 0f5f6926a06dc3d478518e3fabcae8b3, type: 3}
     sentence:
-      english: IF YOU WANT RUN, PRESS SHIFT!!
-      portuguese: PARA CORRER APERTE SHIFT
-      spanish: manito
+      english: tips_caua
+      portuguese: tips_caua
+      spanish: tips_caua
+  - actorName: CAUA
+    profile: {fileID: 21300000, guid: 0f5f6926a06dc3d478518e3fabcae8b3, type: 3}
+    sentence:
+      english: run_caua
+      portuguese: run_caua
+      spanish: run_caua
+  - actorName: CAUA
+    profile: {fileID: 21300000, guid: 0f5f6926a06dc3d478518e3fabcae8b3, type: 3}
+    sentence:
+      english: run_caua
+      portuguese: run_caua
+      spanish: run_caua
