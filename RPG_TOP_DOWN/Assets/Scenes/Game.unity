@@ -4502,6 +4502,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7211687567765808185, guid: 0629d6915f5d1a1479f6804873bfa137, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8848221267214744042, guid: 0629d6915f5d1a1479f6804873bfa137, type: 3}
       propertyPath: m_Name
       value: House
@@ -4936,6 +4940,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 685006713}
     m_Modifications:
+    - target: {fileID: 6776965630833321544, guid: d03e89bb497e1024fb882d9de3bf90f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8188683876930074494, guid: d03e89bb497e1024fb882d9de3bf90f3, type: 3}
       propertyPath: m_Name
       value: House (4)
@@ -37461,6 +37469,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 685006713}
     m_Modifications:
+    - target: {fileID: 1216138115559200657, guid: 277e82be91d026a4d9b8c584bfd988fb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 6737240337703808135, guid: 277e82be91d026a4d9b8c584bfd988fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -43.768723
@@ -37709,6 +37721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8131248962549606094, guid: 64d2aabb769802348900e5109dfc723d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37788,6 +37804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4078208885368545571, guid: 50114a31dc49d89469066e55e88f2ea3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 5735912967101510371, guid: 50114a31dc49d89469066e55e88f2ea3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -57.768723
