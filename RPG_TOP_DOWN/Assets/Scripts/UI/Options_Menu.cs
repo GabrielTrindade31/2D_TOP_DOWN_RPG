@@ -53,6 +53,7 @@ public class Options_Menu : MonoBehaviour
         float newvolume = volume * 100f - 80f;
         SoundBar.fillAmount = volume;
         audioMixer.SetFloat("volume", newvolume);
+        Debug.Log(newvolume);
     }
 
     public void SetQuality(int qualityIndex)
