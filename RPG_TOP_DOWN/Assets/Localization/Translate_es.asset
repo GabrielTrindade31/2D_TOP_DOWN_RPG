@@ -127,6 +127,30 @@ MonoBehaviour:
     m_Localized: "Espa\xF1ol"
     m_Metadata:
       m_Items: []
+  - m_Id: 27
+    m_Localized: "Con 3 maderas, presiona \"F\" aqu\xED para construir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "\"Para recolectar agua, presione la tecla 'E' cuando est\xE9 cerca
+      del lago. Para pescar, presione 'F' en ciertas \xE1reas del lago\"."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "Para plantar una zanahoria haz un hoyo con la pala en el suelo,
+      rodeado por una valla, y situado cerca del lago. A continuaci\xF3n, llena el
+      agujero con agua y saca la zanahoria."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: "Consejos de c\xF3mo funciona el juego."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: "\"Para entablar una conversaci\xF3n con un NPC, presiona la tecla
+      'E' cuando est\xE9s cerca de \xE9l\"."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

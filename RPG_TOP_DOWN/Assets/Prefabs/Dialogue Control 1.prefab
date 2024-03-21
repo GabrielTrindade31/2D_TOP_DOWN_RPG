@@ -44,10 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd1377da3abc074e9a83f1fa08bc3a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringRef:
+    m_TableReference:
+      m_TableCollectionName: Translate
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: hello_player
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   dialolueObj: {fileID: 0}
   profileSprite: {fileID: 0}
   speechText: {fileID: 0}
   actorNameText: {fileID: 0}
-  typingSpeed: 0.05
+  typingSpeed: 0.01
   isShowing: 0
   language: 0
+  references:
+    version: 2
+    RefIds: []

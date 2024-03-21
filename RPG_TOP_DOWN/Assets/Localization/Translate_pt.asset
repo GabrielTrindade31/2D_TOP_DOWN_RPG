@@ -126,6 +126,30 @@ MonoBehaviour:
     m_Localized: Espanhol
     m_Metadata:
       m_Items: []
+  - m_Id: 27
+    m_Localized: Com 3 madeiras, pressione "F" aqui para construir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "\"Para coletar \xE1gua, pressione a tecla 'E' quando estiver perto
+      do lago. Para pescar, pressione 'F' em certas \xE1reas do lago.\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "Para plantar uma cenoura fa\xE7a um buraco com a p\xE1 no ch\xE3o,
+      cercado por uma cerca e localizado pr\xF3ximo ao lago. Em seguida, encha o
+      buraco com \xE1gua e pegue a cenoura."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Dicas de como o jogo funciona
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: '"Para conversar com um NPC, pressione a tecla ''E'' quando estiver
+      perto dele."'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

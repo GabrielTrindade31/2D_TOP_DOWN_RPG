@@ -7,12 +7,9 @@ public class StartMenu : MonoBehaviour
     [SerializeField] CanvasGroup Idiom;
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Tutorial");
     }
-    public void Language()
-    {
-        SceneManager.LoadScene("Language");
-    }
+    
     public void QuitGame()
     {
         Application.Quit();

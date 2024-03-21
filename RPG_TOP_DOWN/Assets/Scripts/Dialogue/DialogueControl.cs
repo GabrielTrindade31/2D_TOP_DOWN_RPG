@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class DialogueControl : MonoBehaviour
 {
     public LocalizedString stringRef = new LocalizedString() { TableReference = "Translate", TableEntryReference = "hello_player" };
- 
+
     [Header("Components")]
     public GameObject dialolueObj;//dialogue windown
     public Image profileSprite;//sprite of the actor
@@ -19,7 +19,7 @@ public class DialogueControl : MonoBehaviour
     private NPC_Dialogue npc;
 
     [Header("Settings")]
-    public float typingSpeed;//speed of the speech
+    public float typingSpeed = 0.02f;//speed of the speech
 
     //variables of control
     [HideInInspector] public bool isShowing;// if the windown is visible
@@ -38,7 +38,7 @@ public class DialogueControl : MonoBehaviour
     public idiom language;
     public static DialogueControl instance;
 
-      //awake is called before all the Starts() in the hyrarchy of the script execution
+    //awake is called before all the Starts() in the hyrarchy of the script execution
     private void Awake()
     {
         instance = this;
@@ -55,13 +55,13 @@ public class DialogueControl : MonoBehaviour
 
     }
     IEnumerator TypeSentence()
-{
-    foreach (char letter in sentences[index].ToCharArray())
     {
-        speechText.text += letter;
-        yield return new WaitForSeconds(typingSpeed);
+        foreach (char letter in sentences[index].ToCharArray())
+        {
+            speechText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
     }
-}
 
     public void NextSentece()
     {
@@ -98,7 +98,7 @@ public class DialogueControl : MonoBehaviour
             sentences = new string[keys.Length];
             for (int i = 0; i < keys.Length; i++)
             {
-                 stringRef.TableEntryReference = keys[i];
+                stringRef.TableEntryReference = keys[i];
                 sentences[i] = stringRef.GetLocalizedString(); // Use the Localization package to get the localized dialogue
             }
             actor = actorname;

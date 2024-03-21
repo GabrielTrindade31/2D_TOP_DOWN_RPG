@@ -124,6 +124,30 @@ MonoBehaviour:
     m_Localized: Spanish
     m_Metadata:
       m_Items: []
+  - m_Id: 27
+    m_Localized: With 3 woods, press "F" here to build
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: '"To collect water, press the ''E'' key when near the lake. To fish,
+      press ''F'' in certain areas of the lake."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: To plant a carrot do a hole using the shovel in the ground, surrounded
+      by a fence, and located near the lake. Next, fill the hole with water and get
+      the carrot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Tips of how the game work
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: '"To engage in conversation with an NPC, press the ''E'' key when
+      near them."'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
