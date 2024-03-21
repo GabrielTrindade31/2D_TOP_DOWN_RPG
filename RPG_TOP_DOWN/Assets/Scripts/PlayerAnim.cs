@@ -14,6 +14,7 @@ public class PlayerAnim : MonoBehaviour
     private Animator anim;
     private Casting casting;
     private bool isHitting;
+    public bool isCasting;
     private float recoveryTime = 2.5f;
     private float timeCount;
     public Animator Anim { get => anim; set => anim = value; }
@@ -51,8 +52,9 @@ public class PlayerAnim : MonoBehaviour
             {
                 if (player._isrolling)
                 {
-                    if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling")){
-                    Anim.SetTrigger("isRoll");
+                    if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling"))
+                    {
+                        Anim.SetTrigger("isRoll");
                     }
                 }
                 else
@@ -105,11 +107,13 @@ public class PlayerAnim : MonoBehaviour
 
     #region Attack
 
-    public void OnAtack(){
+    public void OnAtack()
+    {
 
-        Collider2D hit = Physics2D.OverlapCircle(attackpoint.position, radius,enemyLayer);
+        Collider2D hit = Physics2D.OverlapCircle(attackpoint.position, radius, enemyLayer);
 
-        if (hit != null){
+        if (hit != null)
+        {
             hit.GetComponentInChildren<AnimationControl>().Onhit();
         }
     }
@@ -122,13 +126,16 @@ public class PlayerAnim : MonoBehaviour
     #endregion
     public void OnCastingStart()
     {
-        anim.SetTrigger("isCasting");
         player.ispaused = true;
+        isCasting = true;
+        anim.SetTrigger("isCasting");
+
     }
 
     public void OnCastingEnd()
     {
         casting.OnCasting();
+        isCasting = false;
         player.ispaused = false;
     }
     public void OnHammeringStart()
@@ -147,22 +154,27 @@ public class PlayerAnim : MonoBehaviour
         if (!isHitting)
         {
             anim.SetTrigger("hit");
-            if (player.health <= 20f){
+            if (player.health <= 20f)
+            {
                 player.health = 0f;
-            } else{
+            }
+            else
+            {
                 player.health -= 20f;
             }
-            
+
             isHitting = true;
         }
     }
-    public void Death(){
+    public void Death()
+    {
         player.isdead = true;
         anim.SetTrigger("death");
-        
-        
+
+
     }
-    public void DeathEnd(){
+    public void DeathEnd()
+    {
         SceneManager.LoadScene("GameOver");
-        }
+    }
 }

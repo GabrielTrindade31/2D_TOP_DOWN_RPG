@@ -98,7 +98,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1042800533276557668}
   hole: {fileID: -373817857, guid: 123b1266515f5af48bfba124661ebec7, type: 3}
   carrot: {fileID: -2011542116, guid: 123b1266515f5af48bfba124661ebec7, type: 3}
-  digAmount: 2
+  digAmount: 1
   waterAmount: 15
   detecting: 0
 --- !u!82 &4617236181826186459
@@ -110,7 +110,7 @@ AudioSource:
   m_GameObject: {fileID: 2215057731686431273}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0949daed41bc9ee4d8fd13ae6ba3261a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.224
