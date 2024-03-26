@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.Mathematics;
 using System.Drawing;
+
 public class Options_Menu : MonoBehaviour
 {
     [SerializeField] private Image SoundBar;
@@ -15,14 +16,14 @@ public class Options_Menu : MonoBehaviour
     public GameObject Optionsmenu;
 
     public AudioMixer audioMixer;
-    public Dropdown resolutionDropdown;
+    public Dropdown  resolutionDropdown;
     private bool gamestart;
     Resolution[] resolutions;
     void Start()
     {
         gamestart = true;
         SetVolume(1);
-        resolutions = Screen.resolutions; 
+        resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
 
@@ -46,9 +47,10 @@ public class Options_Menu : MonoBehaviour
     public void SetVolume(float volume)
     {
         float value;
-        if (gamestart == false){
-        SoundManager.Instance.audioMixer.GetFloat("volume", out value);
-        AudioSource.PlayClipAtPoint(SoundManager.Instance.GetSFXByName("Whoosh"), Vector3.zero, value);
+        if (gamestart == false)
+        {
+            SoundManager.Instance.audioMixer.GetFloat("volume", out value);
+            AudioSource.PlayClipAtPoint(SoundManager.Instance.GetSFXByName("Whoosh"), Vector3.zero, value);
         }
         float newvolume = volume * 100f - 80f;
         SoundBar.fillAmount = volume;

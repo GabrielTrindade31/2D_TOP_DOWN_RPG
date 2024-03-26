@@ -6,7 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    private Skeletonboss skeletonboss;
     [SerializeField] private AudioSource audiosource;
 
 
