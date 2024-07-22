@@ -16,7 +16,7 @@ public class Options_Menu : MonoBehaviour
     public GameObject Optionsmenu;
 
     public AudioMixer audioMixer;
-    public Dropdown  resolutionDropdown;
+    public Dropdown resolutionDropdown;
     private bool gamestart;
     Resolution[] resolutions;
     void Start()
@@ -52,8 +52,9 @@ public class Options_Menu : MonoBehaviour
             SoundManager.Instance.audioMixer.GetFloat("volume", out value);
             AudioSource.PlayClipAtPoint(SoundManager.Instance.GetSFXByName("Whoosh"), Vector3.zero, value);
         }
-        float newvolume = volume * 100f - 80f;
         SoundBar.fillAmount = volume;
+        float newvolume = (Mathf.Log10(volume*10 + 1f) / Mathf.Log10(11f)) * 90 - 80f; ;
+        
         audioMixer.SetFloat("volume", newvolume);
         Debug.Log(newvolume);
     }
